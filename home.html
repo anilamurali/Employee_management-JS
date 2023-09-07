@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="icon" href="https://th.bing.com/th/id/OIP.JDWhoOKsRsG3e9zslTGoVQHaHa?pid=ImgDet&rs=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<style>
+*{
+    font-family: 'Kaisei HarunoUmi', serif; 
+    background-color: aliceblue;
+}
+body{
+    background-color: aliceblue;
+
+}
+h1{
+    color: rgb(40, 59, 88);
+}
+
+button{
+    border: 1px solid rgb(40, 59, 88);
+    color:  rgb(40, 59, 88);
+    width: 100%;
+    height: 40px;
+    font-size: 17px;
+    margin-top: 10px;
+    border-radius: 4px;
+
+}
+button:hover{
+    background-color: rgb(40, 59, 88);
+    color: white;
+}
+i{
+    color:  rgb(40, 59, 88);
+}
+.searchbutton{
+ width: 100%;
+ background-color: rgb(40, 59, 88);
+ color: white;
+ border-radius: 4px;
+}
+.displayemp{
+    display: none;
+}
+#warning{
+    color: red;
+}
+
+</style>
+
+</head>
+<body >
+    <div class="container-fluid">
+        <nav class="navbar navbar-light  bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand"> <h1 id="user" >Welcome User</h1></a>
+              <div class="d-flex">
+                
+                <button class="searchbutton"  onclick="logout()">Logout</button>
+              </div>
+            </div>
+          </nav>
+        <div>
+           
+       
+        </div>
+       
+
+        <h1 class="text-center mt-5 ">Employee Details</h1>
+        <div class="row mt-3">
+            <div class="col-4 ps-5">
+                <img src="https://cdni.iconscout.com/illustration/premium/thumb/login-3305943-2757111.png" width="400px" alt="">
+            </div>
+            <div class="col-4 p-2">
+                <!-- Registration -->
+                <input id="id" type="text" class="form-control mt-2" placeholder="Employee Id">
+                <input id="name" type="text" class="form-control mt-2" placeholder="Employee Name">
+                <input  id="address" type="text" class="form-control mt-2" placeholder="Employee Address">
+                <input id="des" type="text" class="form-control mt-2" placeholder="Employee Designation">
+                <input id="exp" type="text" class="form-control mt-2" placeholder="Employee Experience">
+                <input id="salary" type="text" class="form-control mt-2" placeholder="Employee Salary">
+                <button type="button" onclick="addEmployee()" class="">Add Employee</button>
+
+
+            </div>
+            <div class="col-4 mt-2 px-5">
+                <input type="text" class="form-control mt-2" id="empid" placeholder="Employee Id">
+                <p id="warning">
+                    <!-- warning -->
+                </p>
+                <button class="searchbutton" onclick="searchEmploye()">Search</button>
+                
+                <div id="result" class="displayemp">
+
+                    <div class="card mt-3" style="width: 100%;">
+                        <img src="https://cdn2.iconfinder.com/data/icons/duo-business/512/boss_portrait-512.png" class="card-img-top " alt="...">
+
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item" id="eid"></li>
+                          <li class="list-group-item" id="ename"></li>
+                          <li class="list-group-item" id="eaddress"></li>
+                          <li class="list-group-item" id="edesignation"></li>
+                          <li class="list-group-item" id="eexperience"></li>
+                          <li class="list-group-item" id="esalary"></li>
+                          <button onclick="deleteEmployee()" class=" mt-2">Delete Employee</button>
+
+                        </ul>
+                        
+                      </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="text-center text-white" style="background-color: #f1f1f1;">
+        <!-- Grid container -->
+        <div class="container pt-4">
+          <!-- Section: Social media -->
+          <section class="mb-4">
+            <!-- Facebook -->
+            <a
+              class="btn btn-link btn-floating btn-lg text-dark m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="dark"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+      
+            <!-- Twitter -->
+            <a
+              class="btn btn-link btn-floating btn-lg text-dark m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="dark"
+              ><i class="fab fa-twitter"></i
+            ></a>
+      
+            <!-- Google -->
+            <a
+              class="btn btn-link btn-floating btn-lg text-dark m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="dark"
+              ><i class="fab fa-google"></i
+            ></a>
+      
+            <!-- Instagram -->
+            <a
+              class="btn btn-link btn-floating btn-lg text-dark m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="dark"
+              ><i class="fab fa-instagram"></i
+            ></a>
+      
+            <!-- Linkedin -->
+            <a
+              class="btn btn-link btn-floating btn-lg text-dark m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="dark"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <!-- Github -->
+            <a
+              class="btn btn-link btn-floating btn-lg text-dark m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="dark"
+              ><i class="fab fa-github"></i
+            ></a>
+          </section>
+          <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+      
+        <!-- Copyright -->
+        <div class="text-center text-dark p-3" style="background-color: rgba(52, 58, 93, 0.2);">
+          © 2023 Copyright:
+          <a class="text-dark" href="https://mdbootstrap.com/">Employeemanagement.com</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+
+    <script src="./home.js"></script>
+</body>
+</html>

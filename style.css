@@ -1,0 +1,59 @@
+*{
+    font-family: 'Kaisei HarunoUmi', serif; 
+}
+
+.navbar-brand{
+    font-family: 'Kaisei HarunoUmi', serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(40, 59, 88);
+}
+.logbody{
+    background-image: url(https://www.cio.com/wp-content/uploads/2023/05/iStock-1334591613-2.jpg?quality=50&strip=all);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.login{
+    height:100vh ;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    
+}
+.login-body{
+    background-color: #1c1839b6;
+    height:400px ;
+    width: 350px;
+    padding: 15px;
+    border-radius: 5px;
+    margin-right: 100px;
+    box-shadow: inset -5px -5px 12px #1c1839b6,
+    5px 5px 12px  rgba(0, 0, 0, .16) ;
+    display: grid;  
+}
+input{
+   height: 40px;
+    
+}
+.login .logbody h1{
+   
+    text-align: center;
+}
+button{
+    margin-left: 25px;
+    width: 80%;
+    height: 40px;
+    color: rgb(40, 59, 88);
+    border-radius: 5px;
+    border: 1px solid rgb(40, 59, 88);
+}
+button:hover{
+    background-color: rgb(70, 78, 90);
+    color: white;
+}
+
+i{
+color: rgb(40, 59, 88);
+}
+
